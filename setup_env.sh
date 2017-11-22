@@ -61,8 +61,8 @@ if [ ! -d "/opt/py_3.6.3" ]; then
     CPPFLAGS="-I/usr/local/opt/openssl/include" LDFLAGS="-L/usr/local/opt/openssl/lib" ./configure --prefix=/opt/py_3.6.3 --with-pydebug --with-dtrace --enable-loadable-sqlite-extensions --enable-big-digits --with-doc-strings --with-pymalloc
     make
     sudo make install
+    /opt/py_3.6.3/bin/pip3 install virtualenv virtualenvwrapper
     cd ..
-    cd ${WORKSPACE}
 fi
 
 if [ ! -d "/opt/py_2.7.14" ]; then
@@ -75,7 +75,6 @@ if [ ! -d "/opt/py_2.7.14" ]; then
     sudo make install
     /opt/py_2.7.14/bin/python -m ensurepip
     cd ..
-    cd ${WORKSPACE}
 fi
 
 
