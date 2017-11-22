@@ -1,6 +1,3 @@
-;;; Package --- fucking why
-
-;;; Commentary:
 ;; setup melpa
 (require 'package) ;; You might already have this line
 (add-to-list 'package-archives
@@ -19,7 +16,7 @@
     ("4c756e27a179b91d3c0227a8050aabbde3ba3f1d5ed4548cbba77214729e0f34" default)))
  '(package-selected-packages
    (quote
-    (pyvenv bug-hunter git-commit git-blamed git-auto-commit-mode gist fortune-cookie flymake-yaml flymake-shell flymake-python-pyflakes flycheck-pyflakes flycheck-color-mode-line flycheck egg dummyparens company-shell company-go company-ansible company comment-dwim-2 color-theme))))
+    (virtualenvwrapper pyvenv bug-hunter git-commit git-blamed git-auto-commit-mode gist fortune-cookie flymake-yaml flymake-shell flymake-python-pyflakes flycheck-pyflakes flycheck-color-mode-line flycheck egg dummyparens company-shell company-go company-ansible company comment-dwim-2 color-theme))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -40,7 +37,6 @@
 (add-hook 'flycheck-mode-hook 'flycheck-color-mode-line-mode)
 (require 'flycheck-pyflakes)
 (add-hook 'python-mode-hook 'flycheck-mode)
-(setq flymake-python-pyflakes-extra-arguments '("--ignore=W806"))
 
 ;; flymake
 (require 'flymake-python-pyflakes)
@@ -48,6 +44,9 @@
 (require 'flymake-shell)
 (add-hook 'sh-set-shell-hook 'flymake-shell-load)
 (add-hook 'yaml-mode-hook 'flymake-yaml-load)
+
+;; virtualenvwrapper
+(setq venv-dirlookup-names '(".venv" "venv" "pyenv" ".virtual"))
 
 ;;(provide '.emacs)\n;;; .emacs ends here
 
