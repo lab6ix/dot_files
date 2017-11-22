@@ -1,0 +1,9 @@
+[core]
+	excludesfile = /Users/moses/.gitignore
+[user]
+	name = moses
+	email = moses.rolston@nike.com
+[merge]
+	tool = ediff
+[mergetool "ediff"]
+  cmd = ec -c -a \"\"  --eval \"(ediff-merge-files-with-ancestor \\\"$LOCAL\\\" \\\"$REMOTE\\\" \\\"$BASE\\\" nil \\\"$MERGED\\\")\"
