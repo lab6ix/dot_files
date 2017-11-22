@@ -1,4 +1,3 @@
-;;; Commentary 
 ;; setup melpa
 (require 'package) ;; You might already have this line
 (add-to-list 'package-archives
@@ -17,7 +16,7 @@
     ("4c756e27a179b91d3c0227a8050aabbde3ba3f1d5ed4548cbba77214729e0f34" default)))
  '(package-selected-packages
    (quote
-    (yasnippet-snippets yasnippet what-the-commit json-mode flycheck-demjsonlint live-py-mode homebrew-mode highlight-parentheses highlight-operators groovy-mode pyvenv bug-hunter git-commit git-blamed git-auto-commit-mode gist fortune-cookie flymake-yaml flymake-shell flymake-python-pyflakes flycheck-pyflakes flycheck-color-mode-line flycheck egg dummyparens company-shell company-go company-ansible company comment-dwim-2 color-theme))))
+    (virtualenvwrapper pyvenv bug-hunter git-commit git-blamed git-auto-commit-mode gist fortune-cookie flymake-yaml flymake-shell flymake-python-pyflakes flycheck-pyflakes flycheck-color-mode-line flycheck egg dummyparens company-shell company-go company-ansible company comment-dwim-2 color-theme))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -46,17 +45,8 @@
 (add-hook 'sh-set-shell-hook 'flymake-shell-load)
 (add-hook 'yaml-mode-hook 'flymake-yaml-load)
 
-;; other enables
-(require 'highlight-parentheses)
-(require 'live-py-mode)
-
-;; json-snatcher 
-(defun js-mode-bindings ()
-"Sets a hotkey for using the json-snatcher plugin"
-	 (when (string-match  "\\.json$" (buffer-name))
-        (local-set-key (kbd "C-c C-g") 'jsons-print-path)))
-(add-hook 'js-mode-hook 'js-mode-bindings)
-(add-hook 'js2-mode-hook 'js-mode-bindings)
+;; virtualenvwrapper
+(setq venv-dirlookup-names '(".venv" "venv" "pyenv" ".virtual"))
 
 ;;(provide '.emacs)\n;;; .emacs ends here
 

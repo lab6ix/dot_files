@@ -94,7 +94,6 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-### shell stuff
 
 # handy aliases
 # ** aliases are horrible don't use them **
@@ -103,7 +102,6 @@ alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
 alias clr='clear;echo "Currently logged in on $(tty), as $(whoami) in directory $(pwd)."'
-alias emc="emacsclient -n" # no blocking terminal waiting for edit
 alias show_all="defaults write com.apple.Finder AppleShowAllFiles YES && killall Finder"
 alias hide_stuff="defaults write com.apple.Finder AppleShowAllFiles NO && killall Finder"
 alias nethack='telnet nethack.alt.org'
@@ -134,7 +132,7 @@ extract () {
 
 
 #update path
-export PATH=/opt/py_3.6.3/bin:/usr/local/bin:$PATH
+export PATH=/usr/local/bin:/opt/py_3.6.3/bin:/opt/py_2.7.14/bin:/usr/bin:/bin:/usr/sbin:/sbin
 
 # set history configs
 export HISTCONTROL=erasedups  # Ignore duplicate entries in history
@@ -142,7 +140,7 @@ export HISTFILE=~/.histfile
 export HISTSIZE=100000         # Increases size of history
 export SAVEHIST=100000
 export HISTIGNORE="&:ls:ll:la:l.:pwd:exit:clear:clr:[bf]g"
-export EDITOR="emacsclient"
+export EDITOR="ec"
 export ALTERNATE_EDITOR=""
 
 

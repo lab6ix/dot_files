@@ -84,7 +84,14 @@ cp -a git/gitconfig ${HOME}/.gitconfig
 cp -a git/gitignore ${HOME}/.gitignore
 cp -a emacs/emacs.d ${HOME}/.emacs.d
 cp -a bins/ec /usr/local/bin/ec
+cp -a python/postactivate ${HOME}/.virtualenvs/
+cp -a python/postdeactivate ${HOME}/.virtualenvs/
 
 
 
-# 
+
+# enable emacs daemon
+sudo cp -a emacs/gnu.emacs.daemon.plist /Library/LaunchAgents/
+sudo launchctl load -w /Library/LaunchAgents/gnu.emacs.daemon.plist
+
+

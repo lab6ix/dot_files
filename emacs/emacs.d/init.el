@@ -1,4 +1,6 @@
-;;; Commentary 
+;;; Package --- fucking why
+
+;;; Commentary:
 ;; setup melpa
 (require 'package) ;; You might already have this line
 (add-to-list 'package-archives
@@ -38,6 +40,7 @@
 (add-hook 'flycheck-mode-hook 'flycheck-color-mode-line-mode)
 (require 'flycheck-pyflakes)
 (add-hook 'python-mode-hook 'flycheck-mode)
+(setq flymake-python-pyflakes-extra-arguments '("--ignore=W806"))
 
 ;; flymake
 (require 'flymake-python-pyflakes)
